@@ -22,5 +22,6 @@ public:
     void readFile(string path);
 
     bool contain(int);
+    void calculatePrice();
 };
 

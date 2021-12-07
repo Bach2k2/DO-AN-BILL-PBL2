@@ -47,7 +47,7 @@ void CustomerService::dequeue()
 {
 
 	bool check = false;
-	cout << "DO YOU WANT TO DELETE?"<<endl;
+	cout << "DO YOU WANT TO DELETE?";
 	int choice;
 	cout << "Enter 1 to delete,0 to exit";
 	cin >> choice;

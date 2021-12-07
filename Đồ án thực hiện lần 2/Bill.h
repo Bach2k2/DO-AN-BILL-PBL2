@@ -15,7 +15,7 @@ public:
 	string nameBill;
 	Date beginDate;
 	Date endDate;
-	int price;
+	double price;
 	
 public:
 	Bill* next;
@@ -27,6 +27,7 @@ public:
 	friend ostream& operator<<(ostream&, const Bill&);
 	void readDataIF(ifstream&);
 	void fromString(string str);
-	
+	// Get price;
+	void setPrice(double);
 };
 

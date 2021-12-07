@@ -18,5 +18,6 @@ public:
 	int isLeapYear(int); // Kiem tra nam nhuan
 	int endOfMonth(int);//Kiem tra cuoi thang
 	friend ostream& operator<<(ostream&, const Date&);
+	int getMonth();
 };
 

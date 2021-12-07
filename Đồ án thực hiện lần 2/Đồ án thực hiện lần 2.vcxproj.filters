@@ -59,9 +59,6 @@
     <ClInclude Include="Service.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NullPointerException.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CustomerService.h">
       <Filter>Header Files</Filter>
     </ClInclude>

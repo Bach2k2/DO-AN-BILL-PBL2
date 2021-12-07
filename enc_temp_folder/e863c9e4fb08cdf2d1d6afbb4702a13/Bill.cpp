@@ -165,13 +165,10 @@ void Bill::fromString(string str)
 			number = "";
 		}
 	}
-	/*
-	* 	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		std::cout << numstr[i] << " ";
 	}
-	*/
-
 	int DD = stof(numstr[0]);
 	int MM = stof(numstr[1]);
 	int YY = stof(numstr[2]);

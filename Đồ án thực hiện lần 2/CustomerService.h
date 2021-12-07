@@ -21,7 +21,7 @@ public:
 
  //   void setData();
     void readDataInFile(string);//Doc file
-      
+    Customer& getByMKH(string);
 
 
 };

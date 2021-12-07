@@ -162,7 +162,6 @@
     <ClInclude Include="BillService.h" />
     <ClInclude Include="CustomerService.h" />
     <ClInclude Include="Date.h" />
-    <ClInclude Include="NullPointerException.h" />
     <ClInclude Include="Service.h" />
   </ItemGroup>
   <ItemGroup>

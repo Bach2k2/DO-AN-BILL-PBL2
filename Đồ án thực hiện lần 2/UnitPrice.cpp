@@ -3,6 +3,11 @@ using namespace std;
 #include "UnitPrice.h"
 UnitPrice::UnitPrice(int unit)
 {
+	this->unitRank = new int[7];
+	for (int i = 0; i < 6; i++)
+	{
+		this->unitRank[i] = 0;
+	}
 	this->unit = unit;
 	this->price = 0.0;
 }
@@ -48,37 +53,58 @@ void UnitPrice::calculate()
 	{
 		this->price = ((double)this->unit - 100) * rank[5] + 100 * rank[4] + 100 * rank[3] + 100 * rank[2] + 50 * rank[1] + 50 * rank[0];
 	}
+	this->price *= 1000;
 }
 void UnitPrice::calculate2()
 {
-	if (unit - 50.0 >= 0)
+	// Neu chi dien bac 1
+	if (unit - 50 <= 0)
 	{
-		this->price += 50 * rank[0];
-		unit = unit - 50;
+		unitRank[0] = unit;
+	} else
+	//Neu chi dien bac 2:
+	if (unit - 100 <= 0)
+	{
+		unitRank[0] = 50;
+		unitRank[1] = unit - 50;
+	}else
+		//Neu chi dien bac 3:
+	if (unit - 200 <= 0)
+	{
+		unitRank[0] = 50;
+		unitRank[1] = 50;
+		unitRank[2] = unit - 100;
+	}else
+		//Neu chi dien bac 4:
+	if (unit - 300 <= 0)
+	{
+		unitRank[0] = 50;
+		unitRank[1] = 50;
+		unitRank[2] = 100;
+		unitRank[3] = unit - 200;
+	}else
+		//Neu chi dien bac 5:
+	if (unit - 400 <= 0)
+	{
+		unitRank[0] = 50;
+		unitRank[1] = 50;
+		unitRank[2] = 100;
+		unitRank[3] = 100;
+		unitRank[4] = unit - 300;
 	}
-	if (unit - 50 >= 0)
+	//Neu chi dien bac 6:
+	else
 	{
-		this->price += 50 * rank[1];
-		unit = unit - 50;
+		unitRank[0] = 50;
+		unitRank[1] = 50;
+		unitRank[2] = 100;
+		unitRank[3] = 100;
+		unitRank[4] = 100;
+		unitRank[5] = unit - 400;
 	}
-	if (unit - 100 >= 0)
+	for (int i = 0; i < 6; i++)
 	{
-		this->price += 100 * rank[2];
-		unit = unit - 100;
-	}
-	if (unit - 100 >= 0)
-	{
-		this->price += unit * rank[3];
-		unit = unit - 100;
-	}
-	if (unit - 100 >= 0)
-	{
-		this->price += unit * rank[4];
-		unit = unit - 100;
-	}
-	if (unit - 100 >= 0)
-	{
-		this->price += unit * rank[5];
+		this->price += unitRank[i] * priceRank[i];
 	}
 }
 void UnitPrice::showUnitPrice()

@@ -87,7 +87,7 @@ void BillService::search()
 void BillService::display()
 {
 	cout << "\t\t\t\tBill List\t\t\t\t\t" << endl;
-	cout << "ID\t|Name\t|t Begin Date \t| End Date\t|Previous Unit\t| Last Unit \t|Unit \t|Price\t|Customer's ID" << endl;
+	cout << "ID\t|Name\tt Begin Date \t End Date\tPrevious Unit\t Last Unit \tUnit \tPrice\t  Customer's ID" << endl;
 	Bill* bill = pHead;
 	while (bill != NULL)
 	{
@@ -188,12 +188,12 @@ void BillService::readFile(string path)
 			bill->fromString(line);
 			this->add(bill);
 		}
-		cout << "data added successfully"<<endl;
+		cout << "data added successfully";
 		file.close();
 	}
 	else
 	{
-		cout << "Not success"<<endl;
+		cout << "Not success";
 	}
 }
 bool BillService::contain(int id)
